@@ -14,13 +14,13 @@ steps:
   - script: |
       docker pull loadimpact/k6
     displayName: Pull k6 image
-  - ${{ if contains(parameters.testType, 'stress') }}:
+  - ${{ if eq(parameters.testType, 'stress') }}:
     - script: |
         docker run -i \
           -v `pwd`:/src \
           loadimpact/k6 \
           run -e options="stressOptions" /src/012_azure_pipelines/http_get.js \
-  - ${{ if contains(parameters.testType, 'smoke') }}:
+  - ${{ if eq(parameters.testType, 'smoke') }}:
   - script: |
         docker run -i \
           -v `pwd`:/src \
