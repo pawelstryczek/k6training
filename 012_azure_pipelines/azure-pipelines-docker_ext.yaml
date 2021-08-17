@@ -2,7 +2,10 @@
 parameters:
 - name: testType
   type: string
-  values: 'smoke,stress'
+  default: smoke
+  values: 
+  - smoke
+  - stress
 
 pool:
   vmImage: 'ubuntu-18.04'
