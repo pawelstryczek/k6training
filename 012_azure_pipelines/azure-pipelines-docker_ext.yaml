@@ -1,13 +1,9 @@
 # azure-pipelines.yml
 parameters:
 - name: testType
-  displayName: Test type
   type: string
-  default: ubuntu-latest
-  values:
-  - smoke
-  - stress
-
+  values: {smoke,stress}
+  
 pool:
   vmImage: 'ubuntu-18.04'
 
