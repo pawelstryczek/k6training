@@ -21,9 +21,9 @@ steps:
           loadimpact/k6 \
           run -e options="stressOptions" /src/012_azure_pipelines/http_get.js \
   - ${{ if eq(parameters.testType, 'smoke') }}:
-  - script: |
-      docker run -i \
-       -v `pwd`:/src \
-        loadimpact/k6 \
-        run -e options="smokeOptions" /src/012_azure_pipelines/http_get.js \
+      - script: |
+          docker run -i \
+          -v `pwd`:/src \
+            loadimpact/k6 \
+            run -e options="smokeOptions" /src/012_azure_pipelines/http_get.js \
     displayName: Run k6 cloud
