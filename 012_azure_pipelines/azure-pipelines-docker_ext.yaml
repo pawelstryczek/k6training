@@ -3,7 +3,7 @@ parameters:
 - name: testType
   type: string
   default: smoke
-  values: 
+  values:
   - smoke
   - stress
 
