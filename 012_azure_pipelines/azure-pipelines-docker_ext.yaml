@@ -2,8 +2,8 @@
 parameters:
 - name: testType
   type: string
-  values: {smoke,stress}
-  
+  values: 'smoke,stress'
+
 pool:
   vmImage: 'ubuntu-18.04'
 
